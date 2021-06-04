@@ -45,7 +45,7 @@ class Order(models.Model):
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    courses = models.OneToManyField(Course, on_delete=models.CASCADE)
+    courses = models.ForeignKey(Course, on_delete=models.CASCADE)
     street = models.CharField(max_length=1000, blank=False)
     City = models.CharField(max_length=1000, blank=False)
     state = models.CharField(max_length=1000, blank=False)

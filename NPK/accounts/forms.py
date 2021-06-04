@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import Image, Video, Music
 from django.contrib.auth.models import User
 
 
@@ -12,13 +11,6 @@ class LoginForm(forms.Form):
                 "class": "form-control"
             }
         ))
-    # email = forms.CharField(
-    #     widget=forms.EmailInput(
-    #         attrs={
-    #             "placeholder": "Email",
-    #             "class": "form-control"
-    #         }
-    #     ))
 
     password1 = forms.CharField(
         widget=forms.PasswordInput(
@@ -40,42 +32,3 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
-
-
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model = Image
-        fields = ('title', 'file', 'description', 'tags')
-        widgets = {
-            'tags': forms.TextInput(attrs={'data-role': 'tagsinput'})
-        }
-
-        def save(self):
-            image = super(ImageForm, self).save()
-            return image
-
-
-class VideoForm(forms.ModelForm):
-    class Meta:
-        model = Video
-        fields = ('title', 'file', 'description', 'tags')
-        widgets = {
-            'tags': forms.TextInput(attrs={'data-role': 'tagsinput'})
-        }
-
-        def save(self):
-            video = super(VideoForm, self).save()
-            return video
-
-
-class MusicForm(forms.ModelForm):
-    class Meta:
-        model = Music
-        fields = ('title', 'file', 'description', 'tags', 'thumbnail')
-        widgets = {
-            'tags': forms.TextInput(attrs={'data-role': 'tagsinput'})
-        }
-
-        def save(self):
-            music = super(MusicForm, self).save()
-            return music
