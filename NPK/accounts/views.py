@@ -17,7 +17,7 @@ def register(request):
             return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, "signup.html", {'form': form})
+    return render(request, "auth/sign-up.html", {'form': form})
 
 
 def login_view(request):
@@ -33,7 +33,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 if request.user.is_superuser:
-                    return redirect('/dashb')
+                    return redirect('/dashboard')
                 return redirect("/")
 
             else:
@@ -41,4 +41,4 @@ def login_view(request):
 
         else:
             msg = 'Error validating the form'
-    return render(request, "login.html", {"form": form, "msg": msg})
+    return render(request, "auth/login.html", {"form": form, "msg": msg})
