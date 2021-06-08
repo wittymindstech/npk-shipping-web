@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'favicon.ico' %}" rel="icon">
+    <title>Login</title>
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="{% static 'assets/vendor/perfect-scrollbar.css' %}" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="{% static 'assets/css/app.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/app.rtl.css' %}" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.rtl.css' %}" rel="stylesheet">
+
+    <!-- Font Awesome FREE Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.rtl.css' %}" rel="stylesheet">
+
+    <!-- ion Range Slider -->
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.rtl.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="layout-login-centered-boxed">
+    <div class="layout-login-centered-boxed__form">
+        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
+            <a href="index.html" class="text-center text-light-gray mb-4">
+              NPK-Knots
+            </a>
+        </div>
+
+        <!-- ======= Section ======= -->
+          {% block body %}
+
+          {% endblock %}
+        <!-- End Section -->
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/vendor/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap.min.js' %}"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="{% static 'assets/vendor/perfect-scrollbar.min.js' %}"></script>
+
+    <!-- DOM Factory -->
+    <script src="{% static 'assets/vendor/dom-factory.js' %}"></script>
+
+    <!-- MDK -->
+    <script src="{% static 'assets/vendor/material-design-kit.js' %}"></script>
+
+    <!-- Range Slider -->
+    <script src="{% static 'assets/vendor/ion.rangeSlider.min.js' %}"></script>
+    <script src="{% static 'assets/js/ion-rangeslider.js' %}"></script>
+
+    <!-- App -->
+    <script src="{% static 'assets/js/toggle-check-all.js' %}"></script>
+    <script src="{% static 'assets/js/check-selected-row.js' %}"></script>
+    <script src="{% static 'assets/js/dropdown.js' %}"></script>
+    <script src="{% static 'assets/js/sidebar-mini.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+</body>
+
+</html>
