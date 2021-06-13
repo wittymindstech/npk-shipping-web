@@ -76,7 +76,7 @@
                             <li class="nav-item dropdown">
                             </li>
                         </ul>
-
+                        {% if request.user.is_authenticated %}
                         <div class="dropdown">
                             <a href="#account_menu" class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar" data-toggle="dropdown">
                                 <img src="{% static 'profile.png' %}" class="rounded-circle" width="32" alt="Frontted">
@@ -109,6 +109,25 @@
                             </div>
                         </div>
 
+                        {% else %}
+                        <div class="dropdown">
+                            <a href="#account_menu" class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar" data-toggle="dropdown">
+                                <span class="ml-1 d-flex-inline">
+                                    <span class="text-light">Sign in</span>
+                                </span>
+                            </a>
+                            <div id="company_menu" class="dropdown-menu dropdown-menu-right navbar-company-menu">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex align-items-center py-2" href="fixed-student-edit-account.html">
+                                    <span class="material-icons mr-2">account_circle</span> Sign Up
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center py-2" href="#">
+                                    <span class="material-icons-outlined">Sign in</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {% endif %}
                     </div>
                 </div>
 
