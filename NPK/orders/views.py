@@ -110,10 +110,17 @@ def remove_from_cart(request, slug):
             )
             order.courses.remove(order_course)
             messages.success(request, "This course is removed from your cart")
+            # delete order object if no courses associated  with current order
+            if order.courses.count()==0:
+                order.delete()
+                return redirect('order-summary')
             return redirect('order-summary')
         else:
             messages.warning(request, "This course is not in your cart")
-            return redirect("products", slug=slug)
+            # TODO: Redirect to all courses page
+            # return redirect("products", slug=slug)
+
+            return redirect('/')
     else:
         messages.error(request, "You do not have an active order.")
         return redirect('order-summary')

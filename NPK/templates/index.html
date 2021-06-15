@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <strong class="h4 m-0">{{course.price}} Rs.</strong>
-                                    <a href="#" class="btn btn-primary ml-auto"><i class="material-icons">add_shopping_cart</i></a>
+                                    <a href="{% url 'add_to_cart' course.slug %}" class="btn btn-primary ml-auto"><i class="material-icons">add_shopping_cart</i></a>
                                 </div>
                             </div>
                         </div>

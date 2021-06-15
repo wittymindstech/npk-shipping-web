@@ -39,7 +39,18 @@
               NPK-Knots
             </a>
         </div>
-
+        {% if messages %}
+          <div class="mt-5 pt-4">
+              {% for message in messages %}
+                  <div class="alert alert-{{ message.tags | default:'info' }} alert-dismissible fade show">
+                      {{ message }}
+                      <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              {% endfor %}
+          </div>
+      {% endif %}
         <!-- ======= Section ======= -->
           {% block body %}
 
