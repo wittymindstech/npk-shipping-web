@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'NPK.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -126,7 +126,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Login Settings
 
-LOGIN_URL = '/accounts/login/'
-LOGOUT_URL = '/accounts/logout/'
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

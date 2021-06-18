@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Search {% endblock %}
+
+{% block style %}
+{% endblock %}
+{% block body %}
+
+
+                <h2 class="bold m-4 text-center p-4">Courses Found</h2>
+                <div class="row mb-4">
+                    {% for course in all_search_results %}
+                    <div class="col-md-3">
+                        <div class="card card__course" data-aos="fade-up" data-offset="-100">
+                            <div class="card-header card-header-large card-header-dark bg-dark d-flex justify-content-center">
+                                <a class="card-header__title  justify-content-center align-self-center d-flex flex-column" href="#">
+                                    <span><img src="{{ course.image.url }}" class="mb-1" style="width:34px;" alt="logo"></span>
+                                    <span class="course__title">{{course.title}}</span>
+                                    <span class="course__subtitle">{{course.subtitle | truncatechars:15}}</span>
+                                </a>
+                            </div>
+                            <div class="p-3">
+                                <div class="d-flex align-items-center">
+                                    <strong class="h4 m-0">{{course.price}} Rs.</strong>
+                                    <a href="{% url 'add_to_cart' course.slug %}" class="btn btn-primary ml-auto"><i class="material-icons">add_shopping_cart</i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                        <h3  class="bold p4" >No Courses available</h3>
+                    {% endfor %}
+                </div>
+
+{% endblock body %}
