@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from orders.models import Profile
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -28,7 +28,7 @@ def register(request):
             return render(request, "auth/sign-up.html",)
         else:
             return render(request, "auth/sign-up.html",)
-    except:            
+    except:
         messages.error(request, "Something went wrong. Please try again.")
         return render(request, "auth/sign-up.html",)
 

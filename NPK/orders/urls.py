@@ -10,6 +10,7 @@ urlpatterns = [
     path('add_to_cart/<slug>/', views.add_to_cart, name='add_to_cart'),
     path('remove_from_cart/<slug>/', views.remove_from_cart, name='remove_from_cart'),
     path('remove_item_from_cart/<slug>/', views.remove_item_from_cart, name='remove_item_from_cart'),
+    path('search/', views.SearchResultsView.as_view(), name='search'),
 ]
 
 if settings.DEBUG:
